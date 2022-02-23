@@ -1,0 +1,103 @@
+/*
+M Fawwaz Firjatullah
+123200148
+Praktikum PBO IF-E
+ */
+package tugaspbo;
+import java.util.Scanner;
+
+
+class Main {
+    Main() {
+    }
+    void utama_method() {
+    }
+    public static void main(String args[]) {
+        Main my=new Main();
+        Konversi your=new Konversi();
+
+        your.konversi_method();
+    }
+}
+
+class Konversi {
+    Konversi() {
+    }
+    void konversi_method() {
+        double c, f, r, k;
+        boolean kondisi=true;
+        do {
+
+            Scanner sc=new Scanner(System.in);
+            System.out.println(" M Fawwaz Firjatullah \n 123200148 \n PRAKTIKUM PBO IF-E \n\n Program Konversi Suhu \n 1. Ubah ke Fahrenheit  \n 2. Ubah ke Reamur  \n 3. Ubah ke Kelvin  \n 4. Exit Program \n Pilih : ");
+
+            int ch=sc.nextInt();
+            switch(ch) {
+                case 1:
+                    System.out.println("Masukkan Suhu:");
+                    c = sc.nextDouble();
+                    f = (9 * c) / 5 + 32;
+                    if (c>0&&c<100)
+                    {
+                        System.out.println(c + " Celcius dalam fahrenheit adalah " + f);
+                        System.out.println("Kondisi Air Adalah Normal");
+                    } else if (c<=0)
+                    {
+                        System.out.println(c + " Celcius dalam fahrenheit adalah " + f);
+                        System.out.println("Kondisi Air Adalah Beku");
+                    } else if (c>=100)
+                    {
+                        System.out.println(c + " Celcius dalam fahrenheit adalah " + f);
+                        System.out.println("Kondisi Air Adalah Mendidih");
+                    }
+                    break;
+
+                case 2:
+                    System.out.println("Masukkan Suhu:");
+                    c = sc.nextDouble();
+                    r = (4 * c) / 5;
+                    if (c>0&&c<100)
+                    {
+                        System.out.println(c + " Celcius dalam reamur adalah  " + r);
+                        System.out.println("Kondisi Air Normal");
+                    } else if (c<=0)
+                    {
+                        System.out.println(c + " Celcius dalam reamur adalah " + r);
+                        System.out.println("Kondisi Air Beku");
+                    } else if (c>=100)
+                    {
+                        System.out.println(c + " Celcius dalam reamur adalah " + r);
+                        System.out.println("Kondisi Air Mendidih");
+                    }
+                    break;
+
+                case 3:
+                    System.out.println("Masukkan Suhu:");
+                    c = sc.nextDouble();
+                    k = c + 273.15;
+                    if (c>0&&c<100)
+                    {
+                        System.out.println(c + " Celcius dalam kelvin adalah " + k);
+                        System.out.println("Kondisi Air Normal");
+                    } else if (c<=0)
+                    {
+                        System.out.println(c + " Celcius dalam kelvin adalah " + k);
+                        System.out.println("Kondisi Air Beku");
+                    } else if (c>=100)
+                    {
+                        System.out.println(c + " Celcius dalam kelvin adalah " + k);
+                        System.out.println("Kondisi Air Mendidih");
+                    }
+                    break;
+
+                case 4:
+                    kondisi=false;
+                    System.out.println("Program berakhir");
+                    break;
+                default:
+                    System.out.println("Inputan salah");
+                    break;
+            }
+        } while(kondisi);
+    }
+}
